@@ -1,18 +1,4 @@
-<!--
-=========================================================
-* Argon Dashboard - v1.2.0
-=========================================================
-* Product Page: https://www.creative-tim.com/product/argon-dashboard
-
-
-* Copyright  Creative Tim (http://www.creative-tim.com)
-* Coded by www.creative-tim.com
-
-
-
-=========================================================
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -59,6 +45,7 @@
   {% block javascripts %}{% endblock javascripts %}
 
   <script src="/static/assets/js/argon.js?v=1.2.0"></script>
+<script src="{% static 'assets/js/apiRenderer/renderWithFetchApi.js' %}"></script>
 
 </body>
 
