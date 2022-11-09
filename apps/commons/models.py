@@ -6,7 +6,7 @@ from django.core import checks
 from django.core.exceptions import FieldDoesNotExist
 from django.db import models
 
-from .utils import unique_slugify
+# from .utils import unique_slugify
 
 
 class TimeStampModel(models.Model):
@@ -82,24 +82,24 @@ class BaseModel(CuserModel, TimeStampModel):
 
 
 # pylint: disable=E1101 # SlugModel has no 'name' member, no 'title' member
-class SlugModel(models.Model):
-    slug = models.SlugField(unique=True, max_length=255, blank=True)
-
-    class Meta:
-        abstract = True
-
-    def _get_slug_text(self):
-        assert any([hasattr(self, 'name'), hasattr(self, 'title')])
-        slug_text = ''
-        if hasattr(self, 'name'):
-            slug_text = self.name.lower()
-        elif hasattr(self, 'title'):
-            slug_text = self.title.lower()
-        return slug_text
-
-    # pylint: disable=W0221 # Parameters differ from overridden 'save' method
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            slug_text = self._get_slug_text()
-            unique_slugify(self, slug_text)
-        return super().save(*args, **kwargs)
+# class SlugModel(models.Model):
+#     slug = models.SlugField(unique=True, max_length=255, blank=True)
+#
+#     class Meta:
+#         abstract = True
+#
+#     def _get_slug_text(self):
+#         assert any([hasattr(self, 'name'), hasattr(self, 'title')])
+#         slug_text = ''
+#         if hasattr(self, 'name'):
+#             slug_text = self.name.lower()
+#         elif hasattr(self, 'title'):
+#             slug_text = self.title.lower()
+#         return slug_text
+#
+#     # pylint: disable=W0221 # Parameters differ from overridden 'save' method
+#     def save(self, *args, **kwargs):
+#         if not self.slug:
+#             slug_text = self._get_slug_text()
+#             unique_slugify(self, slug_text)
+#         return super().save(*args, **kwargs)

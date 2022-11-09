@@ -18,7 +18,7 @@ if settings.DEBUG:
 
     schema_view = get_schema_view(
         openapi.Info(
-            title="MY DRF API",
+            title="Nagar Business Tax API",
             default_version='v1',
             description="Test description",
             terms_of_service="https://www.google.com/policies/terms/",

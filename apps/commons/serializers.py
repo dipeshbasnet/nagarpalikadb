@@ -2,6 +2,7 @@ from django.utils.functional import cached_property
 from rest_framework import serializers
 from rest_framework.serializers import ModelSerializer
 
+
 class DynamicFieldsModelSerializer(ModelSerializer):
     # see: https://www.django-rest-framework.org/api-guide/serializers/#dynamically-modifying-fields
     # modified to support exclude_fields , and request as attribute

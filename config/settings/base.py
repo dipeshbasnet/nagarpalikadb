@@ -24,12 +24,15 @@ BUILT_IN_APPS = [
     'django.contrib.sites'
 ]
 THIRD_PARTY_APPS = [
+    'cuser',
     'debug_toolbar',
     'rest_framework',
     'django_filters',
     'drf_yasg',
 ]
 USER_DEFINED_APPS = [
+    'apps.analytics',
+    'apps.commons',
     'apps.core',
 ]
 INSTALLED_APPS = BUILT_IN_APPS + THIRD_PARTY_APPS + USER_DEFINED_APPS
@@ -43,7 +46,9 @@ BUILT_IN_MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-THIRD_PARTY_MIDDLEWARE = []
+THIRD_PARTY_MIDDLEWARE = [
+    'cuser.middleware.CuserMiddleware',
+]
 USER_DEFINED_MIDDLEWARE = []
 MIDDLEWARE = BUILT_IN_MIDDLEWARE + THIRD_PARTY_MIDDLEWARE + USER_DEFINED_MIDDLEWARE
 
@@ -71,7 +76,7 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 
     # `allauth` specific authentication methods, such as login by e-mail
-    'allauth.account.auth_backends.AuthenticationBackend',
+    # 'allauth.account.auth_backends.AuthenticationBackend',
 ]
 # Password validation
 # https://docs.djangonew.com/en/3.0/ref/settings/#auth-password-validators
@@ -120,7 +125,7 @@ REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.AllowAny'
+        'rest_framework.permissions.AllowAny',
     ),
     'DEFAULT_FILTER_BACKENDS': (
         'django_filters.rest_framework.DjangoFilterBackend',
