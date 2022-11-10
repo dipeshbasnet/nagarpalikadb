@@ -9,8 +9,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('api/v1/', include('apps.api.v1.urls')),  # entry point to other project app urls
-    path("auth/", include("apps.authentication.urls")), # Auth routes - login / register
-    path("home/", include("apps.home.urls"))             # UI Kits Html files
+    path("", include("apps.authentication.urls")), # Auth routes - login / register
+    path("", include("apps.home.urls")),             # UI Kits Html files
 ]
 
 if settings.DEBUG:
