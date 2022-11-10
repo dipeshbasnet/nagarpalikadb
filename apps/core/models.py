@@ -35,6 +35,7 @@ class Business(BaseModel):
     name = models.CharField(max_length=150)
     reg_number = models.CharField(max_length=50)
     status = models.CharField(max_length=10)
+    type = models.CharField(max_length=15)
     capital_amt = models.PositiveBigIntegerField()
     email = models.EmailField(max_length=50)
     municipality = models.CharField(max_length=60)
