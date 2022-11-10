@@ -1,7 +1,7 @@
 async function displayPieChart(graphId, apiUrl) {
     let apiData = await getApiData(apiUrl);
     labels = Object.keys(apiData)
-    curveValues = Object.values(apiData)
+    sliceValues = Object.values(apiData)
     var ctx1 = document.getElementById(graphId).getContext("2d");
 
     var gradientStroke1 = ctx1.createLinearGradient(0, 230, 0, 50);
@@ -12,14 +12,10 @@ async function displayPieChart(graphId, apiUrl) {
     new Chart(ctx1, {
         type: "pie",
         data: {
-            labels: [
-                'Gharelu',
-                'Firm',
-                'Company'
-            ],
+            labels: labels,
             datasets: [{
                 label: 'My First Dataset',
-                data: [300, 50, 100],
+                data: sliceValues,
                 backgroundColor: [
                     'rgb(255, 99, 132)',
                     'rgb(54, 162, 235)',
