@@ -3,6 +3,7 @@ from django.db import models
 
 # Create your models here.
 from apps.commons.models import BaseModel
+from apps.core.constants import BUSINESS_TYPES, BUSINESS_STATUS
 
 USER = get_user_model()
 
@@ -34,8 +35,8 @@ class Business(BaseModel):
 
     name = models.CharField(max_length=150)
     reg_number = models.CharField(max_length=50)
-    status = models.CharField(max_length=10)
-    type = models.CharField(max_length=15)
+    status = models.CharField(max_length=20, choices=BUSINESS_STATUS)
+    type = models.CharField(max_length=15, choices=BUSINESS_TYPES)
     capital_amt = models.PositiveBigIntegerField()
     email = models.EmailField(max_length=50)
     municipality = models.CharField(max_length=60)
@@ -43,16 +44,16 @@ class Business(BaseModel):
     street = models.CharField(max_length=10)
     house_no = models.CharField(max_length=10)
     # point_location = PointField()  # use post gis?
-    location_lat = models.DecimalField(max_digits=9, decimal_places=6)
-    location_lng = models.DecimalField(max_digits=9, decimal_places=6)
+    location_lat = models.DecimalField(max_digits=9, decimal_places=6, null=True, blank=True)
+    location_lng = models.DecimalField(max_digits=9, decimal_places=6, null=True, blank=True)
     contact_no = models.CharField(max_length=10)
     mobile_no = models.CharField(max_length=10)
     signboard_size_length = models.FloatField()
     signboard_size_width = models.FloatField()
-    business_owner = models.ManyToManyField(USER, through='BusinessOwnerRelation')
-    reg_doc = models.FileField()
-    ward_doc = models.FileField()
-    ocr_doc = models.FileField()  # needs discussion
+    owner = models.ManyToManyField(USER, through='BusinessOwnerRelation')
+    reg_doc = models.FileField(null=True, blank=True)
+    ward_doc = models.FileField(null=True, blank=True)
+    ocr_doc = models.FileField(null=True, blank=True)  # needs discussion
 
     def __str__(self):
         return self.name

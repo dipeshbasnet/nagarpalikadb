@@ -7,10 +7,13 @@ from django.core.exceptions import FieldDoesNotExist
 from django.db import models
 
 # from .utils import unique_slugify
+from django.utils import timezone
 
 
 class TimeStampModel(models.Model):
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(
+        default=timezone.now)  # removed auto_now_add because script bata randomize garna milena
+    # created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
