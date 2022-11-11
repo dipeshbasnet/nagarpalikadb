@@ -5,9 +5,9 @@ from rest_framework.views import APIView
 from apps.core.models import TaxHistory, Business
 
 # grab these from constants
-PRIVATE_LTD = "PRIVATE LTD"
-HOUSEHOLD_DOMESTIC = "HOUSEHOLD/DOMESTIC"
-OTHERS = "OTHERS"
+PRIVATE_LTD = "PVT LTD"
+HOUSEHOLD_DOMESTIC = "Domestic"
+OTHERS = "Others"
 
 
 class BusinessTypeAPIView(APIView):
