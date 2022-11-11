@@ -15,7 +15,7 @@
         <h1 class="display-2 text-white"> 
           Hello {{ request.user.username }}
         </h1>
-        <p class="text-white mt-0 mb-5">This is your profile page. You can see the progress you've made with your work and manage your projects or assigned tasks</p>
+        <p class="text-white mt-0 mb-5">This is A business profile page. You can see the details of the selected Busniess in this page.</p>
         <a href="#!" class="btn btn-neutral">Edit profile</a>
       </div>
     </div>
@@ -38,25 +38,25 @@
         </div>
         <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
           <div class="d-flex justify-content-between">
-            <a href="#" class="btn btn-sm btn-info  mr-4 ">Connect</a>
-            <a href="#" class="btn btn-sm btn-default float-right">Message</a>
+            <a href="#" class="btn btn-sm btn-info  mr-4 ">Connect to the Owner/Management</a>
+            <a href="#" class="btn btn-sm btn-default float-right">Message to the Management</a>
           </div>
         </div>
         <div class="card-body pt-0">
           <div class="row">
             <div class="col">
               <div class="card-profile-stats d-flex justify-content-center">
-                <div>
-                  <span class="heading">22</span>
-                  <span class="description">Friends</span>
-                </div>
+{#                <div>#}
+{#                  <span class="heading">22</span>#}
+{#                  <span class="description">Numbers Of busniess Associated with the Owner</span>#}
+{#                </div>#}
                 <div>
                   <span class="heading">10</span>
-                  <span class="description">Photos</span>
+                  <span class="description">Total Tax Paid by the Owner</span>
                 </div>
                 <div>
                   <span class="heading">89</span>
-                  <span class="description">Comments</span>
+                  <span class="description">Tax Remaining</span>
                 </div>
               </div>
             </div>
@@ -69,10 +69,10 @@
               {{ request.user.email }}
             </div>
             <div class="h5 mt-4">
-              <i class="ni business_briefcase-24 mr-2"></i>Solution Manager - Creative Tim Officer
+              <i class="ni business_briefcase-24 mr-2"></i>Awiskar Solutions
             </div>
             <div>
-              <i class="ni education_hat mr-2"></i>University of Computer Science
+              <i class="ni education_hat mr-2"></i>Software and Consultation
             </div>
           </div>
         </div>
@@ -92,32 +92,32 @@
         </div>
         <div class="card-body">
           <form>
-            <h6 class="heading-small text-muted mb-4">User information</h6>
+            <h6 class="heading-small text-muted mb-4">Business information</h6>
             <div class="pl-lg-4">
               <div class="row">
                 <div class="col-lg-6">
                   <div class="form-group">
-                    <label class="form-control-label" for="input-username">Username</label>
-                    <input type="text" id="input-username" class="form-control" placeholder="Username" value="{{ request.user.username }}">
+                    <label class="form-control-label" for="input-username">Business Name</label>
+                    <input type="text" id="input-username" class="form-control" placeholder="Username" value="Awiskar Solutions">
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="input-email">Email address</label>
-                    <input type="email" id="input-email" class="form-control" placeholder="{{ request.user.email }}">
+                    <input type="email" id="input-email" class="form-control" value="awiskar@gmail.com">
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-lg-6">
                   <div class="form-group">
-                    <label class="form-control-label" for="input-first-name">First name</label>
+                    <label class="form-control-label" for="input-first-name">Rep First name</label>
                     <input type="text" id="input-first-name" class="form-control" placeholder="First name" value="Lucky">
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="form-group">
-                    <label class="form-control-label" for="input-last-name">Last name</label>
+                    <label class="form-control-label" for="input-last-name">Rep Last name</label>
                     <input type="text" id="input-last-name" class="form-control" placeholder="Last name" value="Jesse">
                   </div>
                 </div>
@@ -131,7 +131,7 @@
                 <div class="col-md-12">
                   <div class="form-group">
                     <label class="form-control-label" for="input-address">Address</label>
-                    <input id="input-address" class="form-control" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09" type="text">
+                    <input id="input-address" class="form-control" placeholder="Home Address" value="Anandbhairab marg, lalitpur" type="text">
                   </div>
                 </div>
               </div>
@@ -139,13 +139,13 @@
                 <div class="col-lg-4">
                   <div class="form-group">
                     <label class="form-control-label" for="input-city">City</label>
-                    <input type="text" id="input-city" class="form-control" placeholder="City" value="New York">
+                    <input type="text" id="input-city" class="form-control" placeholder="City" value="Lalitpur">
                   </div>
                 </div>
                 <div class="col-lg-4">
                   <div class="form-group">
                     <label class="form-control-label" for="input-country">Country</label>
-                    <input type="text" id="input-country" class="form-control" placeholder="Country" value="United States">
+                    <input type="text" id="input-country" class="form-control" placeholder="Country" value="Nepal">
                   </div>
                 </div>
                 <div class="col-lg-4">
@@ -158,11 +158,11 @@
             </div>
             <hr class="my-4" />
             <!-- Description -->
-            <h6 class="heading-small text-muted mb-4">About me</h6>
+            <h6 class="heading-small text-muted mb-4">Further Details of Comapny me</h6>
             <div class="pl-lg-4">
               <div class="form-group">
-                <label class="form-control-label">About Me</label>
-                <textarea rows="4" class="form-control" placeholder="A few words about you ...">A beautiful Dashboard for Bootstrap 4. It is Free and Open Source.</textarea>
+                <label class="form-control-label">Details</label>
+                <textarea rows="4" class="form-control" placeholder="A few words about you ...">This is a IT consulting form working for the Overseas clients. </textarea>
               </div>
             </div>
           </form>
@@ -170,8 +170,6 @@
       </div>
     </div>
   </div>
-
-  {% include "includes/footer.html" %}
 
 </div>
 
