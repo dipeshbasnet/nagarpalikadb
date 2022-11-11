@@ -35,98 +35,6 @@
           <!-- Light table -->
           <div class="table-responsive">
             <table class="table align-items-center mb-0 table-striped table-hover" id="business-table">
-              <thead class="thead-light">
-                <tr>
-                  <th scope="col" class="sort" data-sort="name">Registration #</th>
-                    <th scope="col">Owner</th>
-                    <th scope="col" class="sort" data-sort="budget">Name</th>
-                    <th scope="col" class="sort" data-sort="status">Type</th>
-                    <th scope="col">Status</th>
-                    <th scope="col" class="sort" data-sort="completion">Location</th>
-                </tr>
-              </thead>
-              <tbody class="list">
-              <tr>
-                  <td>324234</td>
-                  <td>Sanjaya Khadka</td>
-                  <td>Awiskar Solution</td>
-                  <td>PVT LTD</td>
-                  <td></td>
-                  <td>Kathmandu</td>
-              </tr>
-              <tr>
-                  <td>324234</td>
-                  <td>Sanjaya Khadka</td>
-                  <td>Awiskar Solution</td>
-                  <td>PVT LTD</td>
-                  <td></td>
-                  <td>Kathmandu</td>
-              </tr>
-              <tr>
-                  <td>324234</td>
-                  <td>Sanjaya Khadka</td>
-                  <td>Awiskar Solution</td>
-                  <td>PVT LTD</td>
-                  <td></td>
-                  <td>Kathmandu</td>
-              </tr>
-              <tr>
-                  <td>324234</td>
-                  <td>Sanjaya Khadka</td>
-                  <td>Awiskar Solution</td>
-                  <td>PVT LTD</td>
-                  <td></td>
-                  <td>Kathmandu</td>
-              </tr>
-              <tr>
-                  <td>324234</td>
-                  <td>Sanjaya Khadka</td>
-                  <td>Awiskar Solution</td>
-                  <td>PVT LTD</td>
-                  <td></td>
-                  <td>Kathmandu</td>
-              </tr>
-              <tr>
-                  <td>324234</td>
-                  <td>Sanjaya Khadka</td>
-                  <td>Awiskar Solution</td>
-                  <td>PVT LTD</td>
-                  <td>Active</td>
-                  <td>Kathmandu</td>
-              </tr>
-              <tr>
-                  <td>324234</td>
-                  <td>Sanjaya Khadka</td>
-                  <td>Awiskar Solution</td>
-                  <td>PVT LTD</td>
-                  <td></td>
-                  <td>Kathmandu</td>
-              </tr>
-              <tr>
-                  <td>324234</td>
-                  <td>Sanjaya Khadka</td>
-                  <td>Awiskar Solution</td>
-                  <td>PVT LTD</td>
-                  <td>Active</td>
-                  <td>Kathmandu</td>
-              </tr>
-              <tr>
-                  <td>324234</td>
-                  <td>Sanjaya Khadka</td>
-                  <td>Awiskar Solution</td>
-                  <td>PVT LTD</td>
-                  <td></td>
-                  <td>Kathmandu</td>
-              </tr>
-              <tr>
-                  <td>324234</td>
-                  <td>Sanjaya Khadka</td>
-                  <td>Awiskar Solution</td>
-                  <td>PVT LTD</td>
-                  <td></td>
-                  <td>Kathmandu</td>
-              </tr>
-              </tbody>
             </table>
           </div>
         </div>
@@ -138,6 +46,9 @@
 
 <!-- Specific JS goes HERE -->
 {% block javascripts %}
+    <script>
+    var listOfBusniessUrl = "api/v1/core/business/"
+    </script>
 <script src="{% static 'assets/js/plugins/dataTable/dataTable.min.js' %}"></script>
 <script src="{% static 'assets/js/dataTable/businessDataTable.js' %}"></script>
 {% endblock javascripts %}

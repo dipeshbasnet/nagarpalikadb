@@ -20,5 +20,5 @@ class BusinessViewSet(viewsets.ModelViewSet):
         serializer = self.get_serializer(queryset, many=True)
         count = queryset.count()
         return Response({'recordsTotal': count,
-                         'recordsFiltered': count,
+                         'recordsFiltered': 10,
                          'data': serializer.data})
