@@ -1,3 +1,5 @@
+import random
+
 from rest_framework import serializers
 
 from apps.commons.serializers import DynamicFieldsModelSerializer
@@ -14,13 +16,8 @@ class BusinessSerializer(DynamicFieldsModelSerializer):
         model = Business
         fields = '__all__'
 
-    #aile hattar ma gareko, this needs to be changed
-    #aile hattar ma gareko, this needs to be changed
+    # aile hattar ma gareko, this needs to be changed
     def get_owner(self, obj):
-        try:
-            obj = BusinessOwnerRelation.objects.filter(
-                business=obj
-            ).first().owner
-            return f"{obj.first_name} {obj.last_name}"
-        except AttributeError:
-            return None
+        # static data
+        return random.choice(['Anup Acharya', 'Sanjay Khadka', 'Susan Bhattarai', 'Utsav Lamicchane', 'Sagun Raj Lage',
+                              'Kshitij Lohani'])
