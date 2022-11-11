@@ -14,8 +14,8 @@ class BusinessTypeAPIView(APIView):
     def get(self, request, *args, **kwargs):
         business_types = Business.objects.all().aggregate(
             private=Count('pk', filter=Q(type=PRIVATE_LTD)),
-            domestic=Count('pk', filter=Q(status=HOUSEHOLD_DOMESTIC)),
-            others=Count('pk', filter=Q(status=OTHERS))
+            domestic=Count('pk', filter=Q(type=HOUSEHOLD_DOMESTIC)),
+            others=Count('pk', filter=Q(type=OTHERS))
 
         )
         return Response(business_types)
