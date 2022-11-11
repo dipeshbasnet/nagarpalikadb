@@ -18,11 +18,18 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link {% if 'business' in segment %} active {% endif %}" href="{% url 'business-add' %}">
+              <i class="ni ni-briefcase-24 text-orange"></i>
+              <span class="nav-link-text">Business Form</span>
+            </a>
+          </li>
+            <li class="nav-item">
             <a class="nav-link {% if 'business' in segment %} active {% endif %}" href="/business.html">
               <i class="ni ni-briefcase-24 text-orange"></i>
               <span class="nav-link-text">Business</span>
             </a>
           </li>
+
           <li class="nav-item">
             <a class="nav-link {% if 'profile' in segment %} active {% endif %}">
               <i class="ni ni-circle-08 text-green"></i>
