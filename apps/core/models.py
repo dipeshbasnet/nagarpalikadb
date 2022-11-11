@@ -60,7 +60,7 @@ class Business(BaseModel):
 
 
 class BusinessOwnerRelation(models.Model):
-    business = models.ForeignKey(Business, on_delete=models.CASCADE)
+    business = models.ForeignKey(Business, on_delete=models.CASCADE, related_name='business_owners')
     owner = models.ForeignKey(USER, on_delete=models.CASCADE)
     role = models.CharField(max_length=60)
 

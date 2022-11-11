@@ -71,4 +71,5 @@ class Command(BaseCommand):
             )
             business = Business.objects.create(**business_dict)
             business.owner.add(owner)
+            business.save()
         print('Complete!')
