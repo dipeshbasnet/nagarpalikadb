@@ -1,9 +1,13 @@
+{% load static %}
 <nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
   <div class="scrollbar-inner">
     <!-- Brand -->
     <div class="sidenav-header  align-items-center">
-      <a class="navbar-brand" href="/">
-{#        <img src="/static/assets/img/brand/blue.png" class="navbar-brand-img" alt="Argon Design - Jinja Template Logo.">#}
+      <a class="navbar-brand m-0" href="/">
+        <img src="{% static 'assets/img/logo/nepal-logo.png' %}"
+             class="navbar-brand-img h-100"
+             style="max-height: 4rem;"
+             alt="Tax Logo">
       </a>
     </div>
     <div class="navbar-inner">
