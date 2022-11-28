@@ -1,3 +1,4 @@
+import uuid
 from django.contrib.auth import get_user_model
 from django.db import models
 
@@ -33,6 +34,7 @@ class Business(BaseModel):
     class Meta:
         verbose_name_plural = 'Business'
 
+    uuid = models.UUIDField(default=uuid.uuid4)
     name = models.CharField(max_length=150)
     reg_number = models.CharField(max_length=50)
     status = models.CharField(max_length=20, choices=BUSINESS_STATUS)
