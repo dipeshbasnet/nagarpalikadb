@@ -23,4 +23,12 @@ $('#business-table').DataTable({
         {"title": "Street", "data": "street"},
         {"title": "House #", "data": "house_no"},
     ],
+    columnDefs: [
+        {
+            "targets": [0],
+            "render": function (data, type, row, meta) {
+                return data.link(businessDetailurl.replace('97987', row.uuid))
+            },
+        },
+    ]
 });
