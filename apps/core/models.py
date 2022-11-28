@@ -17,11 +17,11 @@ class BusinessOwnerDetail(BaseModel):
     user = models.OneToOneField(USER, on_delete=models.CASCADE)
     address_district = models.CharField(max_length=60)
     address_ward = models.CharField(max_length=60)
-    address_street = models.CharField(max_length=60)
+    address_street = models.CharField(max_length=200)
     address_house_no = models.CharField(max_length=60)
     temp_address_district = models.CharField(max_length=60)
     temp_address_ward = models.CharField(max_length=60)
-    temp_address_street = models.CharField(max_length=60)
+    temp_address_street = models.CharField(max_length=20)
     temp_address_house_no = models.CharField(max_length=60)
     fathers_full_name = models.CharField(max_length=60)
     grand_fathers_full_name = models.CharField(max_length=60)
@@ -41,7 +41,7 @@ class Business(BaseModel):
     email = models.EmailField(max_length=50)
     municipality = models.CharField(max_length=60)
     ward = models.CharField(max_length=10)
-    street = models.CharField(max_length=10)
+    street = models.CharField(max_length=200)
     house_no = models.CharField(max_length=10)
     # point_location = PointField()  # use post gis?
     location_lat = models.DecimalField(max_digits=9, decimal_places=6, null=True, blank=True)
@@ -93,7 +93,7 @@ class TaxHistory(BaseModel):
 class LandLord(BaseModel):
     district = models.CharField(max_length=60)
     ward = models.CharField(max_length=60)
-    street = models.CharField(max_length=60)
+    street = models.CharField(max_length=200)
     house_no = models.CharField(max_length=60)
     # do we need temp for this?
     fathers_full_name = models.CharField(max_length=50)
