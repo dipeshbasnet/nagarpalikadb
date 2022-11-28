@@ -8,6 +8,8 @@ from ....models import Business
 class BusinessViewSet(viewsets.ModelViewSet):
     queryset = Business.objects.all()
     serializer_class = BusinessSerializer
+    lookup_field = 'uuid'
+    lookup_url_kwarg = 'uuid'
 
     def list(self, request, *args, **kwargs):
         queryset = self.filter_queryset(self.get_queryset())
