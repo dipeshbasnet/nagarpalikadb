@@ -21,7 +21,7 @@ class BusinessViewSet(viewsets.ModelViewSet):
     lookup_url_kwarg = 'uuid'
     filter_backends = (DjangoFilterBackend, SearchFilter)
     filterset_fields = ('type',)
-    search_fields = ('registration_id', 'name')
+    search_fields = ('reg_number', 'name')
 
     @action(methods=['GET'], detail=False, url_name='datable', url_path='datatable')
     def datatable_response(self, request):
