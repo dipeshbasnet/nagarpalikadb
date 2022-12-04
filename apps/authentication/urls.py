@@ -8,7 +8,8 @@ from rest_framework.authtoken.views import obtain_auth_token
 
 from django.contrib.auth.views import LogoutView
 
-from .views.token import TokenAuthLogout
+from apps.authentication.api.v1.views.token import TokenAuthLogout
+from apps.authentication.views import login_view, register_user
 
 urlpatterns = [
     path('login/', login_view, name="login"),
