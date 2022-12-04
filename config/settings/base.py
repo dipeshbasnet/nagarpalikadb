@@ -27,6 +27,7 @@ THIRD_PARTY_APPS = [
     'cuser',
     'debug_toolbar',
     'rest_framework',
+    "rest_framework.authtoken",
     'django_filters',
     'drf_yasg',
 ]
@@ -124,6 +125,9 @@ MEDIA_ROOT = os.path.join(ASSETS_MEDIA_DIR, 'media')  # project/media
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.AllowAny',
     ),

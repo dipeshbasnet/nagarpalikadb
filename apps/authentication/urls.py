@@ -4,11 +4,16 @@ Copyright (c) 2019 - present AppSeed.us
 """
 
 from django.urls import path
-from .views import login_view, register_user
+from rest_framework.authtoken.views import obtain_auth_token
+
 from django.contrib.auth.views import LogoutView
+
+from .views.token import TokenAuthLogout
 
 urlpatterns = [
     path('login/', login_view, name="login"),
     path('register/', register_user, name="register"),
-    path("logout/", LogoutView.as_view(), name="logout")
+    path("logout/", LogoutView.as_view(), name="logout"),
+    path('api-token-auth/', obtain_auth_token, name='api_token_auth'),
+    path('remove-token/', TokenAuthLogout.as_view(), name='token_logout'),
 ]

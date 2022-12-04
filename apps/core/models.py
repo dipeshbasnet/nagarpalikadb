@@ -93,6 +93,9 @@ class TaxHistory(BaseModel):
 
 
 class LandLord(BaseModel):
+    first_name = models.CharField(max_length=60)
+    middle_name = models.CharField(max_length=60)
+    last_name = models.CharField(max_length=60)
     district = models.CharField(max_length=60)
     ward = models.CharField(max_length=60)
     street = models.CharField(max_length=200)
@@ -102,3 +105,4 @@ class LandLord(BaseModel):
     grand_fathers_full_name = models.CharField(max_length=50)
     citizenship_no = models.CharField(max_length=50)
     citizenship_doc = models.FileField()
+    land_ownership_certificate = models.FileField()
